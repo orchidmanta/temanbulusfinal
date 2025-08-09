@@ -1,0 +1,312 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Pixel-perfect font imports */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Cute color palette */
+  --pixel-pink: #ff6b9d;
+  --pixel-purple: #c44569;
+  --pixel-blue: #4834d4;
+  --pixel-cyan: #00d2d3;
+  --pixel-green: #7bed9f;
+  --pixel-yellow: #feca57;
+  --pixel-orange: #ff9ff3;
+  --pixel-red: #ff5252;
+  
+  /* Pastel variants */
+  --pastel-pink: #ffb3d1;
+  --pastel-purple: #dda0dd;
+  --pastel-blue: #87ceeb;
+  --pastel-green: #98fb98;
+  --pastel-yellow: #fff8dc;
+  
+  /* Pixel shadows */
+  --pixel-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+  --pixel-shadow-small: 2px 2px 0px rgba(0,0,0,0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fredoka', cursive;
+  background: linear-gradient(135deg, var(--pixel-pink), var(--pixel-purple), var(--pixel-blue));
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  min-height: 100vh;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pixel art background pattern */
+.pixel-bg {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Cute card styles */
+.cute-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 4px solid #fff;
+  border-radius: 20px;
+  box-shadow: var(--pixel-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.cute-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--pixel-pink), var(--pixel-cyan), var(--pixel-green), var(--pixel-yellow));
+  border-radius: 24px;
+  z-index: -1;
+  animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+  0% { opacity: 0.5; }
+  100% { opacity: 0.8; }
+}
+
+/* Pixel button styles */
+.pixel-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  padding: 12px 24px;
+  border: 3px solid #000;
+  border-radius: 0;
+  background: var(--pixel-yellow);
+  color: #000;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  box-shadow: var(--pixel-shadow-small);
+  position: relative;
+}
+
+.pixel-btn:hover {
+  background: var(--pixel-green);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.pixel-btn-pink {
+  background: var(--pixel-pink);
+  color: white;
+}
+
+.pixel-btn-blue {
+  background: var(--pixel-blue);
+  color: white;
+}
+
+.pixel-btn-green {
+  background: var(--pixel-green);
+  color: #000;
+}
+
+/* Cute text styles */
+.pixel-title {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  text-shadow: var(--pixel-shadow-small);
+  line-height: 1.4;
+}
+
+.cute-text {
+  font-family: 'Fredoka', cursive;
+  font-weight: 500;
+}
+
+/* Floating animation for cute elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Bounce animation for interactive elements */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.bounce-animation {
+  animation: bounce 2s infinite;
+}
+
+/* Pixel heart animation */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Cute navbar */
+.cute-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 4px solid var(--pixel-pink);
+  box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+}
+
+/* Pet card hover effects */
+.pet-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pet-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 107, 157, 0.4);
+}
+
+/* Emoji animations */
+.emoji-float {
+  display: inline-block;
+  animation: float 2s ease-in-out infinite;
+}
+
+.emoji-bounce {
+  display: inline-block;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Cute scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pastel-pink);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pixel-pink);
+  border-radius: 10px;
+  border: 2px solid var(--pastel-pink);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pixel-purple);
+}
+
+/* Pixel art decorations */
+.pixel-decoration {
+  position: relative;
+}
+
+.pixel-decoration::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 20px;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Cute loading spinner */
+.cute-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--pastel-pink);
+  border-top: 4px solid var(--pixel-pink);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive pixel perfect scaling */
+@media (max-width: 768px) {
+  .pixel-btn {
+    font-size: 10px;
+    padding: 10px 20px;
+  }
+  
+  .pixel-title {
+    font-size: 16px;
+  }
+}
+
+/* Cute form inputs */
+.cute-input {
+  border: 3px solid var(--pixel-pink);
+  border-radius: 15px;
+  padding: 12px 16px;
+  font-family: 'Fredoka', cursive;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.cute-input:focus {
+  outline: none;
+  border-color: var(--pixel-blue);
+  box-shadow: 0 0 0 4px rgba(72, 52, 212, 0.2);
+  transform: scale(1.02);
+}
+
+/* Pixel art grid pattern */
+.pixel-grid {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Cute notification styles */
+.cute-notification {
+  background: linear-gradient(135deg, var(--pixel-green), var(--pixel-cyan));
+  border: 3px solid #fff;
+  border-radius: 20px;
+  color: #000;
+  font-family: 'Fredoka', cursive;
+  font-weight: 600;
+  box-shadow: var(--pixel-shadow);
+}
+
+/* Pet sprite containers */
+.pet-sprite {
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+  transition: all 0.3s ease;
+}
+
+.pet-sprite:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.4));
+}
