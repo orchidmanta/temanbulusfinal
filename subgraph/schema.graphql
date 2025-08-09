@@ -1,0 +1,49 @@
+type FundsForwarded @entity(immutable: true) {
+  id: Bytes!
+  petId: String! # string
+  shelter: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PetAdopted @entity(immutable: true) {
+  id: Bytes!
+  adopter: Bytes! # address
+  petId: String! # string
+  amount: BigInt! # uint256
+  shelter: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PetFed @entity(immutable: true) {
+  id: Bytes!
+  feeder: Bytes! # address
+  petId: String! # string
+  amount: BigInt! # uint256
+  shelter: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ShelterSet @entity(immutable: true) {
+  id: Bytes!
+  petId: String! # string
+  shelter: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Withdraw @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
